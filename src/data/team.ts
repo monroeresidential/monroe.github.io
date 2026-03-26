@@ -50,7 +50,7 @@ export const team: TeamMember[] = [
     id: 'dawn-evans',
     name: 'Dawn Evans',
     title: 'VP Finance and Controller',
-    image: '/assets/team/dawn-evans.webp',
+    image: '/assets/team/dawn-evans.jpg',
     role: 'leadership',
     bio: [
       'Bringing over 25 years of real estate finance and accounting expertise, Dawn serves as the Vice President of Finance and Controller for Monroe Residential Partners. In this role, she expertly manages all accounting, finance, treasury operations, and financial reporting processes. She also oversees budgets and internal human resources functions.',
@@ -85,7 +85,7 @@ export const team: TeamMember[] = [
     id: 'jeremy-reis',
     name: 'Jeremy E. Reis',
     title: 'General Counsel',
-    image: '/assets/team/jeremy-reis.png',
+    image: '/assets/team/jeremy-reis.jpg',
     role: 'leadership',
     bio: [
       'Jeremy is a principal in the law firm Ruttenberg Gilmartin Reis LLC. Jeremy has a wide range of expertise, including residential and commercial acquisitions and dispositions, development and real estate based corporate matters. In his role as General Counsel to Monroe Residential Partners, Jeremy is an advisor and provides legal guidance in all matters to Monroe Residential Partners.',
@@ -95,7 +95,7 @@ export const team: TeamMember[] = [
     id: 'gary-kachadurian',
     name: 'Gary T. Kachadurian',
     title: 'Advisor',
-    image: '/assets/team/gary-kachadurian.png',
+    image: '/assets/team/gary-kachadurian.jpg',
     role: 'advisor',
     bio: [
       'Gary has over 30 years of real estate experience specializing in land and asset acquisition, construction, development, financing, and management.',

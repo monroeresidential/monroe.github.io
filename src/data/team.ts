@@ -15,7 +15,7 @@ export const team: TeamMember[] = [
     id: 'michael-obloy',
     name: 'Michael L. Obloy',
     title: 'Principal',
-    image: '/assets/team/michael-obloy.jpg',
+    image: '/assets/team/michael-obloy.webp',
     role: 'leadership',
     bio: [
       'Michael co-founded Monroe Residential Partners and has over 25 years of real estate development, finance and construction experience. He has led the acquisition, development, construction, management, and sales of thousands of residential units, with a value in excess of $500M.',
@@ -34,7 +34,7 @@ export const team: TeamMember[] = [
     id: 'andrew-friestedt',
     name: 'Andrew A. Friestedt',
     title: 'Principal',
-    image: '/assets/team/andrew-friestedt.jpg',
+    image: '/assets/team/andrew-friestedt.webp',
     role: 'leadership',
     bio: [
       'Drew brings 30 years of real estate development and hands-on business operating experience to his role at Monroe Residential Partners. He has developed over $1B of real estate across all asset classes, ranging from mixed-use to multifamily and regional malls.',
@@ -50,7 +50,7 @@ export const team: TeamMember[] = [
     id: 'dawn-evans',
     name: 'Dawn Evans',
     title: 'VP Finance and Controller',
-    image: '/assets/team/dawn-evans.jpg',
+    image: '/assets/team/dawn-evans.webp',
     role: 'leadership',
     bio: [
       'Bringing over 25 years of real estate finance and accounting expertise, Dawn serves as the Vice President of Finance and Controller for Monroe Residential Partners. In this role, she expertly manages all accounting, finance, treasury operations, and financial reporting processes. She also oversees budgets and internal human resources functions.',
@@ -71,7 +71,7 @@ export const team: TeamMember[] = [
     id: 'nicholas-kowieski',
     name: 'Nicholas Kowieski',
     title: 'VP of Development',
-    image: '/assets/team/nicholas-kowieski.jpg',
+    image: '/assets/team/nicholas-kowieski.webp',
     role: 'leadership',
     bio: [
       'Nick joined Monroe Residential Partners in 2017 as a Development Manager. Responsibilities include supporting the Principals throughout the development lifecycle with investment analysis, design, construction, budgeting, market analysis, pricing, marketing, legal and asset management.',
@@ -85,7 +85,7 @@ export const team: TeamMember[] = [
     id: 'jeremy-reis',
     name: 'Jeremy E. Reis',
     title: 'General Counsel',
-    image: '/assets/team/jeremy-reis.jpg',
+    image: '/assets/team/jeremy-reis.webp',
     role: 'leadership',
     bio: [
       'Jeremy is a principal in the law firm Ruttenberg Gilmartin Reis LLC. Jeremy has a wide range of expertise, including residential and commercial acquisitions and dispositions, development and real estate based corporate matters. In his role as General Counsel to Monroe Residential Partners, Jeremy is an advisor and provides legal guidance in all matters to Monroe Residential Partners.',
@@ -95,7 +95,7 @@ export const team: TeamMember[] = [
     id: 'gary-kachadurian',
     name: 'Gary T. Kachadurian',
     title: 'Advisor',
-    image: '/assets/team/gary-kachadurian.jpg',
+    image: '/assets/team/gary-kachadurian.webp',
     role: 'advisor',
     bio: [
       'Gary has over 30 years of real estate experience specializing in land and asset acquisition, construction, development, financing, and management.',

@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 const heroImages = [
-  '/assets/hero/teton-mountain-pass.jpg',
-  '/assets/hero/flat-exterior-pond.jpg',
-  '/assets/hero/downtown-bozeman.jpg',
-  '/assets/hero/box-board-interior.jpg',
-  '/assets/hero/101-west-aerial.jpg',
-  '/assets/hero/volaris-lansing.jpg',
+  '/assets/hero/teton-mountain-pass.webp',
+  '/assets/hero/flat-exterior-pond.webp',
+  '/assets/hero/downtown-bozeman.webp',
+  '/assets/hero/box-board-interior.webp',
+  '/assets/hero/101-west-aerial.webp',
+  '/assets/hero/volaris-lansing.webp',
 ];
 
 const SLIDE_DURATION = 5000;

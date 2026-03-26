@@ -17,7 +17,7 @@ export const projects: Project[] = [
     type: 'Mixed Use',
     location: 'Chicago, IL',
     description: 'A premier mixed-use development combining residential living with vibrant retail spaces.',
-    image: '/assets/projects/boylston.jpg',
+    image: '/assets/projects/boylston.webp',
     featured: true,
   },
   {
@@ -28,7 +28,7 @@ export const projects: Project[] = [
     units: 52,
     sqft: '68,000',
     description: '4-story mixed-use development with 52 apartment units and 15,000 sq ft of ground-level retail in the heart of Bozeman.',
-    image: '/assets/projects/cannery-flats.jpg',
+    image: '/assets/projects/cannery-flats.webp',
     featured: true,
   },
   {
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     units: 173,
     sqft: '185,000',
     description: '173 loft homes with polished concrete floors, 11-foot ceilings, and a rooftop lounge with skyline views.',
-    image: '/assets/projects/1313-west-randolph.jpg',
+    image: '/assets/projects/1313-west-randolph.webp',
     featured: true,
   },
   {
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     location: 'Victor, ID',
     units: 72,
     description: '72 one and two-bedroom apartments just 25 miles from Jackson Hole Resort and Grand Targhee Resort.',
-    image: '/assets/projects/teton-flats.jpg',
+    image: '/assets/projects/teton-flats.webp',
   },
   {
     id: 'box-board-lofts',
@@ -59,7 +59,7 @@ export const projects: Project[] = [
     units: 173,
     sqft: '185,000',
     description: 'Award-winning adaptive reuse of a 1917 historic warehouse into 173 loft homes with 12-foot ceilings and exposed brick.',
-    image: '/assets/projects/box-board-lofts.jpg',
+    image: '/assets/projects/box-board-lofts.webp',
   },
   {
     id: 'volaris-lansing',
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     units: 289,
     sqft: '364,875',
     description: '289 apartments with resort-style heated saltwater pool, fitness center, and entertainment lounge.',
-    image: '/assets/projects/volaris-lansing.jpg',
+    image: '/assets/projects/volaris-lansing.webp',
   },
   {
     id: '101-west',
@@ -79,7 +79,7 @@ export const projects: Project[] = [
     units: 64,
     sqft: '68,000',
     description: '64-unit boutique community on a 1.2-acre transit-oriented development site with rooftop terrace.',
-    image: '/assets/projects/101-west.jpg',
+    image: '/assets/projects/101-west.webp',
   },
   {
     id: '851-west-grand',
@@ -89,6 +89,6 @@ export const projects: Project[] = [
     units: 36,
     sqft: '35,600',
     description: '36 apartments across from Blue Line Grand Avenue Station with chef\'s kitchens and open floor plans.',
-    image: '/assets/projects/851-west-grand.jpg',
+    image: '/assets/projects/851-west-grand.webp',
   },
 ];

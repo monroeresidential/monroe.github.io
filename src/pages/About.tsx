@@ -55,7 +55,7 @@ export default function About() {
               <div className="relative">
                 <div className="aspect-[4/3] bg-monroe-cream overflow-hidden">
                   <img
-                    src="/assets/projects/teton-flats.jpg"
+                    src="/assets/projects/teton-flats.webp"
                     alt="Teton Flats - Monroe Residential"
                     className="w-full h-full object-cover"
                     loading="lazy"

@@ -12,6 +12,8 @@ export default function TeamCard({ member }: TeamCardProps) {
         <img
           src={member.image}
           alt={member.name}
+          width={400}
+          height={533}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           loading="lazy"
         />

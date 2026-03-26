@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 const heroImages = [
   '/assets/hero/teton-mountain-pass.jpg',
@@ -10,7 +10,7 @@ const heroImages = [
 ];
 
 const SLIDE_DURATION = 5000;
-const FADE_DURATION = 500;
+const FADE_DURATION = 800;
 
 function preloadImages(urls: string[]): Promise<void> {
   return Promise.all(
@@ -28,86 +28,92 @@ function preloadImages(urls: string[]): Promise<void> {
 
 export default function HeroSlideshow() {
   const [ready, setReady] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [nextIndex, setNextIndex] = useState<number | null>(null);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  // Two layers: A and B alternate being on top
+  const [layerAIndex, setLayerAIndex] = useState(0);
+  const [layerBIndex, setLayerBIndex] = useState(1);
+  // Which layer is currently visible on top
+  const [activeLayer, setActiveLayer] = useState<'A' | 'B'>('A');
+  // Animation key to restart Ken Burns per layer
+  const [layerAKey, setLayerAKey] = useState(0);
+  const [layerBKey, setLayerBKey] = useState(0);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Preload all images before showing anything
   useEffect(() => {
     preloadImages(heroImages).then(() => setReady(true));
   }, []);
 
-  // Run slideshow only after images are ready
+  const advance = useCallback(() => {
+    if (activeLayer === 'A') {
+      // B is about to become visible — it already has the next image loaded
+      // Restart its Ken Burns animation
+      setLayerBKey((k) => k + 1);
+      setActiveLayer('B');
+      // After fade completes, prepare A with the next-next image
+      setTimeout(() => {
+        setLayerAIndex((layerBIndex + 1) % heroImages.length);
+        setLayerAKey((k) => k + 1);
+      }, FADE_DURATION);
+    } else {
+      setLayerAKey((k) => k + 1);
+      setActiveLayer('A');
+      setTimeout(() => {
+        setLayerBIndex((layerAIndex + 1) % heroImages.length);
+        setLayerBKey((k) => k + 1);
+      }, FADE_DURATION);
+    }
+  }, [activeLayer, layerAIndex, layerBIndex]);
+
   useEffect(() => {
     if (!ready) return;
-
-    const scheduleNext = () => {
-      timerRef.current = setTimeout(() => {
-        setCurrentIndex((prev) => {
-          const next = (prev + 1) % heroImages.length;
-          setNextIndex(next);
-          setIsTransitioning(true);
-
-          setTimeout(() => {
-            setCurrentIndex(next);
-            setNextIndex(null);
-            setIsTransitioning(false);
-            scheduleNext();
-          }, FADE_DURATION);
-
-          return prev;
-        });
-      }, SLIDE_DURATION);
-    };
-
-    scheduleNext();
+    timerRef.current = setTimeout(advance, SLIDE_DURATION);
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
     };
-  }, [ready]);
+  }, [ready, advance]);
 
   return (
     <div className="absolute inset-0 overflow-hidden">
-      {/* Solid background to prevent white flash */}
+      {/* Solid background prevents any flash */}
       <div className="absolute inset-0 bg-monroe-dark" />
 
       {ready && (
         <>
-          {/* Current slide */}
+          {/* Layer A — always in DOM */}
           <div
-            className={`absolute inset-0 transition-opacity ${
-              isTransitioning ? 'opacity-0' : 'opacity-100'
-            }`}
-            style={{ transitionDuration: `${FADE_DURATION}ms` }}
+            className="absolute inset-0 transition-opacity ease-in-out"
+            style={{
+              transitionDuration: `${FADE_DURATION}ms`,
+              opacity: activeLayer === 'A' ? 1 : 0,
+              zIndex: activeLayer === 'A' ? 2 : 1,
+            }}
           >
             <div
+              key={layerAKey}
               className="absolute inset-0 bg-cover bg-center animate-ken-burns-out"
-              style={{ backgroundImage: `url(${heroImages[currentIndex]})` }}
-              key={`current-${currentIndex}`}
+              style={{ backgroundImage: `url(${heroImages[layerAIndex]})` }}
             />
           </div>
 
-          {/* Next slide (fading in) */}
-          {nextIndex !== null && (
+          {/* Layer B — always in DOM */}
+          <div
+            className="absolute inset-0 transition-opacity ease-in-out"
+            style={{
+              transitionDuration: `${FADE_DURATION}ms`,
+              opacity: activeLayer === 'B' ? 1 : 0,
+              zIndex: activeLayer === 'B' ? 2 : 1,
+            }}
+          >
             <div
-              className={`absolute inset-0 transition-opacity ${
-                isTransitioning ? 'opacity-100' : 'opacity-0'
-              }`}
-              style={{ transitionDuration: `${FADE_DURATION}ms` }}
-            >
-              <div
-                className="absolute inset-0 bg-cover bg-center animate-ken-burns-out"
-                style={{ backgroundImage: `url(${heroImages[nextIndex]})` }}
-                key={`next-${nextIndex}`}
-              />
-            </div>
-          )}
+              key={layerBKey}
+              className="absolute inset-0 bg-cover bg-center animate-ken-burns-out"
+              style={{ backgroundImage: `url(${heroImages[layerBIndex]})` }}
+            />
+          </div>
         </>
       )}
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-monroe-dark/65" />
+      <div className="absolute inset-0 bg-monroe-dark/65" style={{ zIndex: 3 }} />
     </div>
   );
 }

@@ -19,10 +19,10 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-sm font-semibold tracking-wider uppercase mb-4 text-white/80">
+            <p className="text-sm font-semibold tracking-wider uppercase mb-4 text-white/80">
               Navigation
-            </h4>
-            <nav className="flex flex-col gap-2">
+            </p>
+            <nav aria-label="Footer navigation" className="flex flex-col gap-2">
               {[
                 { to: '/', label: 'Home' },
                 { to: '/about', label: 'About' },
@@ -42,9 +42,9 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm font-semibold tracking-wider uppercase mb-4 text-white/80">
+            <p className="text-sm font-semibold tracking-wider uppercase mb-4 text-white/80">
               Contact
-            </h4>
+            </p>
             <div className="space-y-2 text-sm text-white/60">
               <a
                 href="tel:+13122964855"
@@ -59,7 +59,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-white/40">
+        <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-white/60">
           &copy; {new Date().getFullYear()} Monroe Residential Partners. All rights reserved.
         </div>
       </div>

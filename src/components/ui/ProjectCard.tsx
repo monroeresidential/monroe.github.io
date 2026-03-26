@@ -22,7 +22,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Type Badge */}
       <div className="absolute top-4 left-4">
-        <span className="px-3 py-1 text-xs font-medium tracking-wider uppercase bg-monroe-accent/90 text-white rounded-sm">
+        <span className="px-3 py-1 text-xs font-medium tracking-wider uppercase bg-monroe-accent-dark text-white rounded-sm">
           {project.type}
         </span>
       </div>

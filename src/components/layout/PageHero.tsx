@@ -25,7 +25,7 @@ export default function PageHero({ title, subtitle, backgroundImage, fullHeight 
       )}
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-6 pt-24 md:pt-0 max-w-4xl mx-auto">
         <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-tight">
           {title}
         </h1>

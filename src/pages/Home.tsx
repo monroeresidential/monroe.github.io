@@ -27,7 +27,7 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-monroe-dark/70" />
         </div>
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+        <div className="relative z-10 text-center px-6 pt-24 md:pt-0 max-w-5xl mx-auto">
           <p className="text-monroe-accent text-sm font-medium tracking-[0.3em] uppercase mb-6">
             Monroe Residential Partners
           </p>

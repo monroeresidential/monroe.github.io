@@ -5,6 +5,7 @@ import Footer from './components/layout/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Team from './pages/Team';
+import TeamMember from './pages/TeamMember';
 import Portfolio from './pages/Portfolio';
 
 function ScrollToTop() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/team/:id" element={<TeamMember />} />
           <Route path="/portfolio" element={<Portfolio />} />
         </Routes>
       </main>

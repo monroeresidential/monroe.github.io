@@ -34,7 +34,7 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ service }: ServiceCardProps) {
   return (
-    <div className="group p-8 bg-white border border-monroe-gray-100 hover:border-monroe-accent/30 hover:shadow-lg transition-all duration-500">
+    <div className="group p-8 h-full bg-white border border-monroe-gray-100 hover:border-monroe-accent/30 hover:shadow-lg transition-all duration-500">
       <div className="text-monroe-accent mb-4">
         {iconMap[service.icon]}
       </div>

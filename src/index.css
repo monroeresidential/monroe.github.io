@@ -31,3 +31,16 @@ body {
   background: var(--color-monroe-accent);
   color: var(--color-monroe-white);
 }
+
+@keyframes ken-burns-out {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-ken-burns-out {
+  animation: ken-burns-out 5.5s ease-out forwards;
+}

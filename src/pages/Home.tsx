@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AnimatedSection from '../components/ui/AnimatedSection';
+import HeroSlideshow from '../components/ui/HeroSlideshow';
 import ProjectCard from '../components/ui/ProjectCard';
 import { projects } from '../data/projects';
 
@@ -20,13 +21,8 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/assets/hero/home-hero.jpg)' }}
-        >
-          <div className="absolute inset-0 bg-monroe-dark/70" />
-        </div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <HeroSlideshow />
         <div className="relative z-10 text-center px-6 pt-24 md:pt-0 max-w-5xl mx-auto">
           <p className="text-monroe-accent text-sm font-medium tracking-[0.3em] uppercase mb-6">
             Monroe Residential Partners

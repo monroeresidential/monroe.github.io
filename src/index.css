@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-monroe-dark: #00051B;
+  --color-monroe-accent: #7BACDC;
+  --color-monroe-cream: #f5f5f3;
+  --color-monroe-white: #ffffff;
+  --color-monroe-gray-100: #e8e8e6;
+  --color-monroe-gray-300: #c4c4c2;
+  --color-monroe-gray-500: #6b7280;
+  --color-monroe-gray-700: #374151;
+  --color-monroe-gray-900: #1a1a2e;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-monroe-gray-700);
+  background: var(--color-monroe-white);
+}
+
+::selection {
+  background: var(--color-monroe-accent);
+  color: var(--color-monroe-white);
+}

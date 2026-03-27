@@ -95,26 +95,26 @@ export default function ProjectDetail() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
             {project.units && (
-              <div className="py-8 px-4 text-center">
-                <p className="text-3xl font-display font-medium text-white">{project.units}</p>
+              <div className="py-8 px-4 text-center flex flex-col justify-end">
+                <p className="text-3xl font-display font-medium text-white flex-1 flex items-center justify-center">{project.units}</p>
                 <p className="text-sm text-white/50 mt-1 tracking-wider uppercase">Units</p>
               </div>
             )}
             {project.sqft && (
-              <div className="py-8 px-4 text-center">
-                <p className="text-3xl font-display font-medium text-white">{project.sqft}</p>
+              <div className="py-8 px-4 text-center flex flex-col justify-end">
+                <p className="text-3xl font-display font-medium text-white flex-1 flex items-center justify-center">{project.sqft}</p>
                 <p className="text-sm text-white/50 mt-1 tracking-wider uppercase">Sq Ft</p>
               </div>
             )}
             {project.floors && (
-              <div className="py-8 px-4 text-center">
-                <p className="text-3xl font-display font-medium text-white">{project.floors}</p>
+              <div className="py-8 px-4 text-center flex flex-col justify-end">
+                <p className="text-3xl font-display font-medium text-white flex-1 flex items-center justify-center">{project.floors}</p>
                 <p className="text-sm text-white/50 mt-1 tracking-wider uppercase">Floors</p>
               </div>
             )}
             {project.parking && (
-              <div className="py-8 px-4 text-center">
-                <p className="text-lg font-display font-medium text-white leading-tight">{project.parking}</p>
+              <div className="py-8 px-4 text-center flex flex-col justify-end">
+                <p className="text-3xl font-display font-medium text-white flex-1 flex items-center justify-center">{project.parking}</p>
                 <p className="text-sm text-white/50 mt-1 tracking-wider uppercase">Parking</p>
               </div>
             )}

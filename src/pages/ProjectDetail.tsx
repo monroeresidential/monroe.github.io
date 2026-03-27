@@ -191,7 +191,29 @@ export default function ProjectDetail() {
                         <dd className="text-monroe-dark font-medium">{project.floors}</dd>
                       </div>
                     )}
+                    {project.yearBuilt && (
+                      <div className="flex justify-between border-b border-monroe-gray-100 pb-3">
+                        <dt className="text-monroe-gray-500">Year Built</dt>
+                        <dd className="text-monroe-dark font-medium">{project.yearBuilt}</dd>
+                      </div>
+                    )}
+                    {project.commercialSpace && (
+                      <div className="flex justify-between border-b border-monroe-gray-100 pb-3">
+                        <dt className="text-monroe-gray-500">Commercial</dt>
+                        <dd className="text-monroe-dark font-medium">{project.commercialSpace}</dd>
+                      </div>
+                    )}
                   </dl>
+                  {project.historicDesignation && (
+                    <div className="mt-6 pt-6 border-t border-monroe-gray-100">
+                      <div className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-monroe-accent-dark flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21" />
+                        </svg>
+                        <p className="text-sm text-monroe-gray-500 leading-relaxed">{project.historicDesignation}</p>
+                      </div>
+                    </div>
+                  )}
                   {project.award && (
                     <div className="mt-8 pt-6 border-t border-monroe-gray-100">
                       <div className="flex items-start gap-3">

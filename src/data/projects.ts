@@ -18,6 +18,9 @@ export interface Project {
   communityAmenities?: string[];
   website?: string;
   award?: string;
+  yearBuilt?: number;
+  commercialSpace?: string;
+  historicDesignation?: string;
 }
 
 export const projects: Project[] = [
@@ -87,27 +90,34 @@ export const projects: Project[] = [
     type: 'Mixed Use',
     location: 'Chicago, IL',
     address: '1313 W Randolph St, Chicago, IL 60607',
-    units: 173,
-    sqft: '185,000',
+    units: 74,
+    sqft: '137,500',
     floors: 3,
-    parking: 'Underground Garage',
-    description: '173 loft homes with polished concrete floors, 11-foot ceilings, and a rooftop lounge with skyline views.',
+    parking: '108 spaces (73 garage + 35 surface)',
+    description: 'Historic adaptive reuse of the 1927 Chicago Wholesale Florists Building into 74 loft apartments and 32,000 SF of commercial space in the West Loop.',
     image: '/assets/projects/1313-west-randolph.webp',
     featured: true,
     heroImage: '/assets/projects/1313-west-randolph/hero.webp',
     gallery: Array.from({ length: 6 }, (_, i) => `/assets/projects/1313-west-randolph/gallery-${i + 1}.webp`),
+    yearBuilt: 1927,
+    commercialSpace: '~32,000 SF',
+    historicDesignation: 'National Register of Historic Places eligible — Historic Rehab Tax Credit project',
     fullDescription: [
-      'Nestled within Chicago\'s trendy West Loop, 13thirteen Randolph Street Lofts offers a modern urban living experience. With an array of contemporary features and amenities, this community provides residents with a comfortable and convenient lifestyle.',
-      'With 35 unique floor plans across studio, one, and two bedroom layouts, every resident finds their perfect space. Units feature polished concrete floors, soaring 11-foot ceilings, quartz countertops, and expansive closets.',
+      '1313 West Randolph is a historic adaptive reuse of the former Chicago Wholesale Florists Building, originally constructed in 1927 as the Merchandise Mart for the city\'s floral trade. Located in Chicago\'s West Loop neighborhood, the cast-in-place concrete industrial loft building was converted into a boutique lifestyle apartment community with ground-floor commercial space.',
+      'The project encompasses two buildings: the primary 130,000 SF structure at 1313 W. Randolph and an adjacent 7,500 SF bow-truss building at 114 N. Elizabeth. Together they deliver 74 loft-style apartments and approximately 32,000 SF of ground-floor office and retail space.',
+      'The redevelopment qualified as a historic rehabilitation, utilizing Historic Rehab Tax Credit incentives through the National Register of Historic Places. The Art Deco structure was converted into a modern, green-designed residential community while preserving its historic character.',
     ],
     apartmentAmenities: [
-      'Polished Concrete Floors', '11-foot Ceilings', 'Quartz Countertops',
-      'Expansive Closets', '35 Unique Floor Plans', 'Studio/1BR/2BR Layouts',
+      'Polished Concrete Floors', 'Soaring 11-foot Ceilings', 'Quartz Countertops',
+      'Expansive Closets', 'Full-Sized Washer & Dryer', 'Energy-Efficient Stainless Steel Appliances',
+      'Italian Cabinetry', 'White Subway Tile Backsplashes', 'Under-Cabinet Lighting',
     ],
     communityAmenities: [
-      'Rooftop Lounge with Pool Table & Bar', 'Stunning Skyline Views',
-      'Fitness Center', 'Heated Garage', 'Bike Storage',
-      'No Pet Weight Restriction', 'Historic Loft Building', 'Green Design',
+      'Rooftop Sky Club with Skyline Views', 'Billiards Table & Bar/Lounge',
+      'Outdoor Rooftop Lounge with Firepit', 'Outdoor Grill Stations',
+      '24/7 Fitness Center with Floor-to-Ceiling Windows', 'Private Media Room',
+      'Heated Indoor Garage Parking', 'Complimentary Heated Bike Storage',
+      'Pet-Friendly (No Weight Restrictions)', 'On-Site Maintenance',
     ],
   },
   {

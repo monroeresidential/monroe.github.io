@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# Monroe Residential Partners
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Corporate website for [Monroe Residential Partners](https://monroeresidential.com), a vertically integrated real estate development firm based in Chicago specializing in multifamily and mixed-use apartment communities.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Framework:** React 19 + TypeScript
+- **Build:** Vite 8
+- **Styling:** Tailwind CSS v4
+- **Routing:** react-router-dom v7
+- **Hosting:** Cloudflare Workers (SPA fallback routing)
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start local dev server with HMR |
+| `npm run build` | Type-check and build for production |
+| `npm run lint` | Run ESLint |
+| `npm run preview` | Build and preview via Wrangler locally |
+| `npm run deploy` | Build and deploy to Cloudflare Workers |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project Structure
+
 ```
+src/
+  App.tsx              # Router and layout shell
+  index.css            # Tailwind import, custom theme tokens, fonts
+  pages/               # Route-level page components
+  components/
+    layout/            # Navbar, Footer, PageHero
+    ui/                # Reusable UI components (cards, slideshow, filters)
+  data/                # Static content (projects, team, services)
+  hooks/               # Custom hooks (scroll animations)
+public/
+  assets/              # Images organized by section (hero, projects, team)
+  fonts/               # Self-hosted Inter and Playfair Display
+```
+
+## Pages
+
+- **/** — Home with hero slideshow, services overview, and featured projects
+- **/about** — Company background and capabilities
+- **/team** and **/team/:id** — Team listing and individual bios
+- **/portfolio** and **/portfolio/:id** — Project gallery with filtering, detail pages with image galleries and amenity lists

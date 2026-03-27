@@ -44,7 +44,7 @@ export default function Home() {
               to="/about"
               className="px-8 py-3 border border-white/30 text-white text-sm font-medium tracking-wider uppercase hover:bg-white/10 transition-colors duration-300"
             >
-              Learn More
+              About Monroe Residential
             </Link>
           </div>
         </div>

@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Logo & Tagline */}
           <div>
             <img
-              src="/assets/logo/MonroeFinal-headerFooterLogo.png"
+              src="/assets/logo/Monroe-Residential-Logo-Color.png"
               alt="Monroe Residential Partners"
               className="h-10 brightness-0 invert mb-4"
             />

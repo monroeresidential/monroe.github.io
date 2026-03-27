@@ -39,7 +39,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <img
-              src="/assets/logo/MonroeFinal-headerFooterLogo.png"
+              src="/assets/logo/Monroe-Residential-Logo-Color.png"
               alt="Monroe Residential Partners"
               className={`h-10 transition-all duration-300 ${
                 showSolid ? '' : 'brightness-0 invert'

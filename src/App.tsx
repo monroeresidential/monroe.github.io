@@ -7,6 +7,7 @@ import About from './pages/About';
 import Team from './pages/Team';
 import TeamMember from './pages/TeamMember';
 import Portfolio from './pages/Portfolio';
+import ProjectDetail from './pages/ProjectDetail';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -28,6 +29,7 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/team/:id" element={<TeamMember />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/:id" element={<ProjectDetail />} />
         </Routes>
       </main>
       <Footer />

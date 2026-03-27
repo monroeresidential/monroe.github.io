@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import type { Project } from '../../data/projects';
 
 interface ProjectCardProps {
@@ -6,7 +7,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="group relative overflow-hidden cursor-pointer aspect-[4/3]">
+    <Link to={`/portfolio/${project.id}`} className="group relative overflow-hidden block aspect-[4/3]">
       {/* Image */}
       <img
         src={project.image}
@@ -40,6 +41,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {project.description}
         </p>
       </div>
-    </div>
+    </Link>
   );
 }

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import type { Project } from '../../data/projects';
 
@@ -5,7 +6,7 @@ interface ProjectCardProps {
   project: Project;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default memo(function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link to={`/portfolio/${project.id}`} className="group relative overflow-hidden block aspect-[4/3]">
       {/* Image */}
@@ -43,4 +44,4 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </div>
     </Link>
   );
-}
+});

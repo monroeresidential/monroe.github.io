@@ -1,12 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import AnimatedSection from '../components/ui/AnimatedSection';
+import NotFound from '../components/ui/NotFound';
 import { projects } from '../data/projects';
+
+function sanitizeWebsiteUrl(website: string): string {
+  const domain = website.replace(/^https?:\/\/(www\.)?/, '').replace(/\/.*$/, '');
+  if (!/^[a-zA-Z0-9][a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(domain)) return '';
+  return `https://www.${domain.toLowerCase()}`;
+}
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
   const project = projects.find((p) => p.id === id);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const lightboxRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
+  const galleryLength = project?.gallery?.length ?? 0;
 
   useEffect(() => {
     if (project) {
@@ -14,32 +24,36 @@ export default function ProjectDetail() {
     }
   }, [project]);
 
-  // Close lightbox on escape
+  // Lock body scroll when lightbox is open
   useEffect(() => {
-    const handleKey = (e: KeyboardEvent) => {
-      if (lightboxIndex === null) return;
-      if (e.key === 'Escape') setLightboxIndex(null);
-      if (e.key === 'ArrowRight') setLightboxIndex((prev) => {
-        const images = project?.gallery || [];
-        return prev !== null && prev < images.length - 1 ? prev + 1 : prev;
-      });
-      if (e.key === 'ArrowLeft') setLightboxIndex((prev) => {
-        return prev !== null && prev > 0 ? prev - 1 : prev;
-      });
-    };
-    window.addEventListener('keydown', handleKey);
-    return () => window.removeEventListener('keydown', handleKey);
-  }, [lightboxIndex, project]);
+    if (lightboxIndex !== null) {
+      document.body.style.overflow = 'hidden';
+      lightboxRef.current?.focus();
+    } else {
+      document.body.style.overflow = '';
+      triggerRef.current?.focus();
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [lightboxIndex]);
+
+  // Keyboard navigation for lightbox
+  const handleLightboxKey = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') setLightboxIndex(null);
+    if (e.key === 'ArrowRight') setLightboxIndex((prev) =>
+      prev !== null && prev < galleryLength - 1 ? prev + 1 : prev
+    );
+    if (e.key === 'ArrowLeft') setLightboxIndex((prev) =>
+      prev !== null && prev > 0 ? prev - 1 : prev
+    );
+  }, [galleryLength]);
+
+  const openLightbox = useCallback((index: number, button: HTMLButtonElement) => {
+    triggerRef.current = button;
+    setLightboxIndex(index);
+  }, []);
 
   if (!project) {
-    return (
-      <div className="min-h-screen flex items-center justify-center pt-20">
-        <div className="text-center">
-          <h1 className="text-2xl font-display text-monroe-dark mb-4">Project not found</h1>
-          <Link to="/portfolio" className="text-monroe-accent-dark hover:underline">Back to Portfolio</Link>
-        </div>
-      </div>
-    );
+    return <NotFound title="Project not found" backLink="/portfolio" backLabel="Back to Portfolio" />;
   }
 
   return (
@@ -97,25 +111,25 @@ export default function ProjectDetail() {
             {project.units && (
               <div className="py-8 px-4 text-center flex flex-col justify-end">
                 <p className="text-3xl font-display font-medium text-white flex-1 flex items-center justify-center">{project.units}</p>
-                <p className="text-sm text-white/50 mt-1 tracking-wider uppercase">Units</p>
+                <p className="text-sm text-white/70 mt-1 tracking-wider uppercase">Units</p>
               </div>
             )}
             {project.sqft && (
               <div className="py-8 px-4 text-center flex flex-col justify-end">
                 <p className="text-3xl font-display font-medium text-white flex-1 flex items-center justify-center">{project.sqft}</p>
-                <p className="text-sm text-white/50 mt-1 tracking-wider uppercase">Sq Ft</p>
+                <p className="text-sm text-white/70 mt-1 tracking-wider uppercase">Sq Ft</p>
               </div>
             )}
             {project.floors && (
               <div className="py-8 px-4 text-center flex flex-col justify-end">
                 <p className="text-3xl font-display font-medium text-white flex-1 flex items-center justify-center">{project.floors}</p>
-                <p className="text-sm text-white/50 mt-1 tracking-wider uppercase">Floors</p>
+                <p className="text-sm text-white/70 mt-1 tracking-wider uppercase">Floors</p>
               </div>
             )}
             {project.parking && (
               <div className="py-8 px-4 text-center flex flex-col justify-end">
                 <p className="text-3xl font-display font-medium text-white flex-1 flex items-center justify-center">{project.parking}</p>
-                <p className="text-sm text-white/50 mt-1 tracking-wider uppercase">Parking</p>
+                <p className="text-sm text-white/70 mt-1 tracking-wider uppercase">Parking</p>
               </div>
             )}
           </div>
@@ -139,10 +153,10 @@ export default function ProjectDetail() {
                     </p>
                   ))}
                 </div>
-                {project.website && (
+                {project.website && sanitizeWebsiteUrl(project.website) && (
                   <p className="mt-8">
                     <a
-                      href={`https://www.${project.website.toLowerCase()}`}
+                      href={sanitizeWebsiteUrl(project.website)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-monroe-accent-dark font-medium hover:underline"
@@ -245,7 +259,7 @@ export default function ProjectDetail() {
               {project.gallery.map((img, i) => (
                 <AnimatedSection key={i} delay={i * 80}>
                   <button
-                    onClick={() => setLightboxIndex(i)}
+                    onClick={(e) => openLightbox(i, e.currentTarget)}
                     className="w-full group relative overflow-hidden aspect-[4/3] cursor-zoom-in"
                   >
                     <img
@@ -334,7 +348,7 @@ export default function ProjectDetail() {
             <h2 className="font-display text-3xl md:text-4xl font-medium text-white mb-4">
               Explore More Projects
             </h2>
-            <p className="text-white/60 mb-10 max-w-2xl mx-auto">
+            <p className="text-white/70 mb-10 max-w-2xl mx-auto">
               Discover our portfolio of multifamily and mixed-use developments across the United States.
             </p>
             <Link
@@ -353,8 +367,14 @@ export default function ProjectDetail() {
       {/* Lightbox */}
       {lightboxIndex !== null && project.gallery && (
         <div
+          ref={lightboxRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image gallery"
+          tabIndex={-1}
           className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
           onClick={() => setLightboxIndex(null)}
+          onKeyDown={handleLightboxKey}
         >
           {/* Close button */}
           <button
@@ -402,7 +422,7 @@ export default function ProjectDetail() {
           />
 
           {/* Counter */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 text-sm">
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-sm">
             {lightboxIndex + 1} / {project.gallery.length}
           </div>
         </div>

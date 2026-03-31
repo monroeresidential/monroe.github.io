@@ -1,10 +1,12 @@
+import { memo } from 'react';
+
 interface FilterBarProps {
   filters: string[];
   activeFilter: string;
   onFilterChange: (filter: string) => void;
 }
 
-export default function FilterBar({ filters, activeFilter, onFilterChange }: FilterBarProps) {
+export default memo(function FilterBar({ filters, activeFilter, onFilterChange }: FilterBarProps) {
   return (
     <div className="flex flex-wrap justify-center gap-3">
       {filters.map((filter) => (
@@ -22,4 +24,4 @@ export default function FilterBar({ filters, activeFilter, onFilterChange }: Fil
       ))}
     </div>
   );
-}
+});

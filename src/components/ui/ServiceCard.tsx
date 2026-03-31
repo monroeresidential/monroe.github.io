@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import type { Service } from '../../data/services';
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -32,7 +33,7 @@ interface ServiceCardProps {
   service: Service;
 }
 
-export default function ServiceCard({ service }: ServiceCardProps) {
+export default memo(function ServiceCard({ service }: ServiceCardProps) {
   return (
     <div className="group p-8 h-full bg-white border border-monroe-gray-100 hover:border-monroe-accent/30 hover:shadow-lg transition-all duration-500">
       <div className="text-monroe-accent mb-4">
@@ -46,4 +47,4 @@ export default function ServiceCard({ service }: ServiceCardProps) {
       </p>
     </div>
   );
-}
+});

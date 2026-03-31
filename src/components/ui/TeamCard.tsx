@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import type { TeamMember } from '../../data/team';
 
@@ -5,7 +6,7 @@ interface TeamCardProps {
   member: TeamMember;
 }
 
-export default function TeamCard({ member }: TeamCardProps) {
+export default memo(function TeamCard({ member }: TeamCardProps) {
   return (
     <Link to={`/team/${member.id}`} className="group text-center block">
       <div className="relative overflow-hidden aspect-[3/4] mb-4">
@@ -27,4 +28,4 @@ export default function TeamCard({ member }: TeamCardProps) {
       </p>
     </Link>
   );
-}
+});

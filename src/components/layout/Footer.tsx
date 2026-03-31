@@ -12,7 +12,7 @@ export default function Footer() {
               alt="Monroe Residential Partners"
               className="h-10 brightness-0 invert mb-4"
             />
-            <p className="text-white/60 text-sm leading-relaxed">
+            <p className="text-white/70 text-sm leading-relaxed">
               A vertically integrated real estate development company specializing in boutique-style, luxury apartment communities.
             </p>
           </div>
@@ -32,7 +32,7 @@ export default function Footer() {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className="text-white/60 hover:text-white transition-colors text-sm"
+                  className="text-white/70 hover:text-white transition-colors text-sm"
                 >
                   {link.label}
                 </Link>
@@ -45,7 +45,7 @@ export default function Footer() {
             <p className="text-sm font-semibold tracking-wider uppercase mb-4 text-white/80">
               Contact
             </p>
-            <div className="space-y-2 text-sm text-white/60">
+            <div className="space-y-2 text-sm text-white/70">
               <a
                 href="tel:+13122964855"
                 className="block hover:text-white transition-colors"
@@ -59,7 +59,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-white/60">
+        <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-white/70">
           &copy; {new Date().getFullYear()} Monroe Residential Partners. All rights reserved.
         </div>
       </div>

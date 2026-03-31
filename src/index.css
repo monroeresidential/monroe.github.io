@@ -73,3 +73,14 @@ body {
 .animate-ken-burns-out {
   animation: ken-burns-out 5.5s ease-out forwards;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ken-burns-out {
+    animation: none;
+  }
+
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

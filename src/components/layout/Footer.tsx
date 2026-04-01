@@ -10,6 +10,8 @@ export default function Footer() {
             <img
               src="/assets/logo/Monroe-Residential-Logo-Color.png"
               alt="Monroe Residential Partners"
+              width={135}
+              height={40}
               className="h-10 brightness-0 invert mb-4"
             />
             <p className="text-white/70 text-sm leading-relaxed">

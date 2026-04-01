@@ -50,6 +50,8 @@ export default function Navbar() {
             <img
               src="/assets/logo/Monroe-Residential-Logo-Color.png"
               alt="Monroe Residential Partners"
+              width={135}
+              height={40}
               className={`h-10 transition-all duration-300 ${
                 showSolid ? '' : 'brightness-0 invert'
               }`}

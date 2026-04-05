@@ -9,6 +9,7 @@ const Team = lazy(() => import('./pages/Team'));
 const TeamMember = lazy(() => import('./pages/TeamMember'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
+const Contact = lazy(() => import('./pages/Contact'));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -32,6 +33,7 @@ function App() {
             <Route path="/team/:id" element={<TeamMember />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/portfolio/:id" element={<ProjectDetail />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </Suspense>
       </main>

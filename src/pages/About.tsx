@@ -15,6 +15,31 @@ const targetMarkets = [
   { name: 'Park City, UT', resort: '' },
 ];
 
+const whyMonroe = [
+  'Chicago Headquarters, National Reach',
+  'Vertically Integrated Development Platform',
+  'Focus on Multifamily Residential Excellence',
+  'Disciplined, Data-Driven Investment Strategy',
+  'Long-Term Partnerships Built on Trust and Results',
+];
+
+const marketRegions = [
+  {
+    title: 'Chicago & the Midwest',
+    body:
+      'Our home market and foundation, where we leverage deep regional knowledge, established partnerships, and an understanding of urban and suburban housing dynamics.',
+  },
+  {
+    title: 'Mountain West Markets',
+    body:
+      'Select high-growth communities where demographic trends and housing demand align with our development strategy.',
+  },
+  {
+    title: 'Targeted National Opportunities',
+    body: 'Markets across the U.S. that meet our disciplined investment criteria and long-term growth outlook.',
+  },
+];
+
 export default function About() {
   useEffect(() => {
     document.title = 'About | Monroe Residential Partners';
@@ -24,35 +49,39 @@ export default function About() {
     <>
       <PageHero
         title="About Monroe Residential"
-        subtitle="Inspirational design and uncompromised quality since day one."
+        subtitle="Midwest Roots. National Multifamily Expertise."
       />
 
-      {/* Overview */}
-      <section className="py-24">
+      {/* About Us */}
+      <section className="section-y border-b border-monroe-gray-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             <AnimatedSection>
               <p className="text-monroe-accent text-sm font-medium tracking-[0.2em] uppercase mb-4">
-                Who We Are
+                About Us
               </p>
-              <h2 className="font-display text-3xl md:text-4xl font-medium text-monroe-dark mb-6">
-                An Industry Leader in Multifamily Development
+              <h2 className="font-display text-3xl md:text-4xl font-medium text-monroe-dark mb-6 text-balance">
+                A Midwest-Based Developer
+                <br />
+                With a National Footprint
               </h2>
-              <div className="space-y-4 text-monroe-gray-500 leading-relaxed">
+              <div className="space-y-5 text-monroe-gray-500 leading-relaxed">
                 <p>
-                  Monroe Residential Partners is a vertically integrated real estate development firm based in Chicago, Illinois. We are recognized as an industry leader with a half-century of combined experience in the multifamily sector.
+                  Founded and headquartered in Chicago, Monroe Residential Partners is a multifamily residential real estate
+                  development firm driven by disciplined investment strategy, thoughtful design, and long-term value creation.
+                  While our roots are firmly planted in the Midwest, our experience and active development pipeline extend
+                  across multiple U.S. markets, including the Mountain West and other high-growth regions.
                 </p>
                 <p>
-                  Our focus on inspirational design and uncompromised quality has led to the successful acquisition, development, and redevelopment of over 30,000 apartments and condominiums across the United States.
-                </p>
-                <p>
-                  We specialize in ground-up construction and adaptive reuse of multifamily and mixed-use apartment projects, delivering boutique-style luxury communities that set the standard in their markets.
+                  We approach every project with a deep understanding of local market dynamics, combining Chicago-born real
+                  estate fundamentals with a national perspective on housing demand, design trends, and operational
+                  performance.
                 </p>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={200}>
-              <div className="relative">
+              <div className="relative lg:pl-4">
                 <div className="aspect-[4/3] bg-monroe-cream overflow-hidden">
                   <img
                     src="/assets/projects/teton-flats.webp"
@@ -61,96 +90,187 @@ export default function About() {
                     loading="lazy"
                   />
                 </div>
-                {/* Accent border */}
-                <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-monroe-accent/30 -z-10" />
+                <div className="hidden lg:block absolute -bottom-5 -right-1 w-full h-full border-2 border-monroe-accent/25 -z-10 pointer-events-none" />
               </div>
             </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* Capabilities */}
-      <section className="py-24 bg-monroe-cream">
+      {/* Our Approach + Capabilities */}
+      <section className="section-y bg-monroe-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
-            <div className="text-center mb-16">
-              <p className="text-monroe-accent text-sm font-medium tracking-[0.2em] uppercase mb-2">
-                What We Do
+            <header className="text-center max-w-3xl mx-auto">
+              <p className="text-monroe-accent text-sm font-medium tracking-[0.2em] uppercase mb-4">
+                Our Approach
               </p>
-              <h2 className="font-display text-3xl md:text-4xl font-medium text-monroe-dark">
-                Our Capabilities
+              <h2 className="font-display text-3xl md:text-4xl font-medium text-monroe-dark mb-8 text-balance">
+                Integrated Expertise. Consistent Execution.
               </h2>
-            </div>
+              <div className="space-y-5 text-monroe-gray-500 leading-relaxed text-left md:text-center md:[&>p]:max-w-2xl md:[&>p]:mx-auto">
+                <p>
+                  Monroe Residential Partners operates through a vertically integrated platform, allowing our team to oversee
+                  the full lifecycle of each project&mdash;from acquisition and development through construction, lease-up, and
+                  long-term asset management.
+                </p>
+                <p>
+                  By keeping core functions in-house, we maintain accountability, cost control, and quality across every phase
+                  of development, ensuring each community is positioned for sustained performance.
+                </p>
+              </div>
+            </header>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, i) => (
-              <AnimatedSection key={service.id} delay={i * 100}>
-                <ServiceCard service={service} />
+          <div className="mt-16 md:mt-20 pt-16 md:pt-20 border-t border-monroe-gray-300/40">
+            <AnimatedSection>
+              <h3 className="font-display text-xl md:text-2xl font-medium text-monroe-dark text-center mb-12 md:mb-14">
+                Capabilities Across the Lifecycle
+              </h3>
+            </AnimatedSection>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+              {services.map((service, i) => (
+                <AnimatedSection key={service.id} delay={i * 80}>
+                  <ServiceCard service={service} />
+                </AnimatedSection>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Develop */}
+      <section className="section-y">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <AnimatedSection>
+            <header className="max-w-3xl mb-12 md:mb-16">
+              <p className="text-monroe-accent text-sm font-medium tracking-[0.2em] uppercase mb-4">
+                What We Develop
+              </p>
+              <h2 className="font-display text-3xl md:text-4xl font-medium text-monroe-dark mb-6 text-balance">
+                Multifamily Communities Designed for Long-Term Value
+              </h2>
+              <p className="text-monroe-gray-500 text-lg leading-relaxed">
+                Our portfolio and development pipeline focus on well-located multifamily residential communities that respond
+                to the needs of modern renters while supporting long-term investment objectives.
+              </p>
+              <p className="mt-8 text-sm font-semibold tracking-wider uppercase text-monroe-dark">
+                We actively pursue opportunities in
+              </p>
+            </header>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+            {marketRegions.map((region, i) => (
+              <AnimatedSection key={region.title} delay={i * 100}>
+                <article className="group h-full p-8 bg-white border border-monroe-gray-100 transition-all duration-500 hover:border-monroe-accent/30 hover:shadow-lg md:min-h-[220px] flex flex-col">
+                  <h3 className="font-display text-lg font-medium text-monroe-dark mb-3 text-balance">{region.title}</h3>
+                  <p className="text-sm text-monroe-gray-500 leading-relaxed flex-1">{region.body}</p>
+                </article>
               </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Acquisition Criteria */}
-      <section className="py-24">
+      {/* Philosophy + Why Monroe */}
+      <section className="section-y bg-monroe-cream border-t border-monroe-gray-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            <AnimatedSection className="lg:col-span-6">
+              <p className="text-monroe-accent text-sm font-medium tracking-[0.2em] uppercase mb-4">
+                Our Philosophy
+              </p>
+              <h2 className="font-display text-3xl md:text-4xl font-medium text-monroe-dark mb-6 text-balance">
+                Local Insight, National Perspective
+              </h2>
+              <p className="text-monroe-gray-500 text-lg leading-relaxed">
+                As a Chicago-based firm, Monroe Residential Partners brings Midwest pragmatism, transparency, and
+                relationship-driven execution to every project&mdash;regardless of location. We believe successful multifamily
+                development requires more than capital; it demands market intelligence, community awareness, and a commitment
+                to quality that endures beyond stabilization.
+              </p>
+            </AnimatedSection>
+
+            <AnimatedSection delay={200} className="lg:col-span-6">
+              <div className="bg-white border border-monroe-gray-100 p-8 md:p-10 lg:sticky lg:top-28">
+                <h3 className="font-display text-xl md:text-2xl font-medium text-monroe-dark mb-8">
+                  Why Monroe Residential Partners
+                </h3>
+                <ul className="space-y-5">
+                  {whyMonroe.map((item) => (
+                    <li key={item} className="flex gap-4 text-monroe-gray-500 text-sm leading-snug">
+                      <span
+                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-monroe-accent"
+                        aria-hidden
+                      />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Acquisition Criteria */}
+      <section className="section-y">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
             <AnimatedSection>
               <p className="text-monroe-accent text-sm font-medium tracking-[0.2em] uppercase mb-4">
                 Strategic Focus
               </p>
-              <h2 className="font-display text-3xl md:text-4xl font-medium text-monroe-dark mb-6">
+              <h2 className="font-display text-3xl md:text-4xl font-medium text-monroe-dark mb-6 text-balance">
                 Acquisition Criteria
               </h2>
-              <div className="space-y-4 text-monroe-gray-500 leading-relaxed">
-                <p>
-                  We specialize in multifamily assets in supply-constrained markets across the mountain west, with a primary focus on workforce housing in bedroom communities near major resorts.
-                </p>
-              </div>
-              <ul className="mt-6 space-y-3 text-sm text-monroe-gray-500">
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-monroe-accent mt-1.5 flex-shrink-0" />
-                  1&ndash;10+ acres
+              <p className="text-monroe-gray-500 leading-relaxed mb-8">
+                In select Mountain West and resort-adjacent markets, we pursue multifamily opportunities in supply-constrained
+                submarkets&mdash;with an emphasis on workforce housing in bedroom communities near major destinations. These
+                criteria complement our broader national pipeline while keeping execution disciplined.
+              </p>
+              <ul className="space-y-3.5 text-sm text-monroe-gray-500">
+                <li className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-monroe-accent" aria-hidden />
+                  <span>1&ndash;10+ acres</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-monroe-accent mt-1.5 flex-shrink-0" />
-                  Property value up to $5,000,000 (excluding dev. costs)
+                <li className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-monroe-accent" aria-hidden />
+                  <span>Property value up to $5,000,000 (excluding dev. costs)</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-monroe-accent mt-1.5 flex-shrink-0" />
-                  Zoned or viable path to entitlements for 100+ units (40+ minimum)
+                <li className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-monroe-accent" aria-hidden />
+                  <span>Zoned or viable path to entitlements for 100+ units (40+ minimum)</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-monroe-accent mt-1.5 flex-shrink-0" />
-                  Water rights required
+                <li className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-monroe-accent" aria-hidden />
+                  <span>Water rights required</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-monroe-accent mt-1.5 flex-shrink-0" />
-                  Within 45-minute commute to major resort
+                <li className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-monroe-accent" aria-hidden />
+                  <span>Within 45-minute commute to major resort</span>
                 </li>
               </ul>
             </AnimatedSection>
 
             <AnimatedSection delay={200}>
-              <div>
-                <h3 className="text-lg font-semibold text-monroe-dark mb-6">
+              <div className="lg:pt-1">
+                <p className="text-monroe-accent text-sm font-medium tracking-[0.2em] uppercase mb-4">
+                  Markets
+                </p>
+                <h3 className="font-display text-2xl md:text-3xl font-medium text-monroe-dark mb-8">
                   Target Markets
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {targetMarkets.map((market) => (
                     <div
                       key={market.name}
-                      className="p-4 bg-monroe-cream border border-monroe-gray-100 hover:border-monroe-accent/30 transition-colors duration-300"
+                      className="p-4 bg-monroe-cream border border-monroe-gray-100 hover:border-monroe-accent/25 transition-colors duration-300"
                     >
-                      <div className="font-medium text-monroe-dark text-sm">
-                        {market.name}
-                      </div>
+                      <div className="font-medium text-monroe-dark text-sm leading-snug">{market.name}</div>
                       {market.resort && (
-                        <div className="text-xs text-monroe-gray-500 mt-1">
-                          {market.resort}
-                        </div>
+                        <div className="text-xs text-monroe-gray-500 mt-1.5 leading-relaxed">{market.resort}</div>
                       )}
                     </div>
                   ))}

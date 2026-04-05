@@ -20,7 +20,7 @@ export default function Team() {
       />
 
       {/* Leadership */}
-      <section className="py-24">
+      <section className="section-y">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -45,7 +45,7 @@ export default function Team() {
 
       {/* Advisors */}
       {advisors.length > 0 && (
-        <section className="py-24 bg-monroe-cream">
+        <section className="section-y bg-monroe-cream">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
               <p className="text-monroe-accent text-sm font-medium tracking-[0.2em] uppercase mb-2">

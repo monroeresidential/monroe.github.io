@@ -105,7 +105,7 @@ export default function ProjectDetail() {
       </section>
 
       {/* Stats Bar */}
-      <section className="bg-monroe-dark border-t border-white/10">
+      <section className="section-y bg-monroe-dark border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
             {project.units && (
@@ -137,7 +137,7 @@ export default function ProjectDetail() {
       </section>
 
       {/* Description + Award */}
-      <section className="py-24 bg-white">
+      <section className="section-y bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
             {/* Main Description */}
@@ -247,7 +247,7 @@ export default function ProjectDetail() {
 
       {/* Photo Gallery */}
       {project.gallery && project.gallery.length > 0 && (
-        <section className="py-24 bg-monroe-cream">
+        <section className="section-y bg-monroe-cream">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <AnimatedSection>
               <h2 className="font-display text-3xl md:text-4xl font-medium text-monroe-dark mb-12">
@@ -286,7 +286,7 @@ export default function ProjectDetail() {
 
       {/* Amenities */}
       {(project.apartmentAmenities || project.communityAmenities) && (
-        <section className="py-24 bg-white">
+        <section className="section-y bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <AnimatedSection>
               <h2 className="font-display text-3xl md:text-4xl font-medium text-monroe-dark mb-16">
@@ -342,7 +342,7 @@ export default function ProjectDetail() {
       )}
 
       {/* CTA / Other Projects */}
-      <section className="py-24 bg-monroe-dark">
+      <section className="section-y bg-monroe-dark">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2 className="font-display text-3xl md:text-4xl font-medium text-white mb-4">

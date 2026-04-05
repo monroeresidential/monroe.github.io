@@ -1,6 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "monroeresidential",
+  "main": "./worker/index.ts",
   "compatibility_date": "2025-09-27",
   "observability": {
     "enabled": true
@@ -10,5 +11,10 @@
   },
   "compatibility_flags": [
     "nodejs_compat"
-  ]
+  ],
+  "vars": {
+    "MAILGUN_DOMAIN": "mg.monroeresidential.com",
+    "MAILGUN_FROM": "Monroe Residential Partners <postmaster@mg.monroeresidential.com>",
+    "CONTACT_TO": "mike@monroeresidential.com"
+  }
 }

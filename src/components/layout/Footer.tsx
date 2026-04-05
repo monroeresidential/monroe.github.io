@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-monroe-dark text-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+    <footer className="bg-monroe-gray-800 text-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-[75px] pb-[37.5px]">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Logo & Tagline */}
           <div>
@@ -30,6 +30,7 @@ export default function Footer() {
                 { to: '/about', label: 'About' },
                 { to: '/team', label: 'Team' },
                 { to: '/portfolio', label: 'Portfolio' },
+                { to: '/contact', label: 'Contact' },
               ].map((link) => (
                 <Link
                   key={link.to}

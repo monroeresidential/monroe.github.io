@@ -25,13 +25,17 @@ export default function Home() {
         <HeroSlideshow />
         <div className="relative z-10 text-center px-6 pt-24 md:pt-0 max-w-5xl mx-auto">
           <p className="text-monroe-accent text-sm font-medium tracking-[0.3em] uppercase mb-6">
-            Monroe Residential Partners
+            Chicago-Based. Nationally Active. Community-Focused.
           </p>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-medium text-white leading-tight">
-            A Vertically Integrated Real Estate Development Company
+          <h1 className="font-display text-3xl md:text-4xl lg:text-[calc(4.5rem-10pt)] font-medium text-white leading-tight">
+            Rooted in Chicago.
+            <br />
+            Building Communities Nationwide.
           </h1>
-          <p className="mt-8 text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
-            Focusing on boutique-style, luxury apartment communities with a combined 70 years of multifamily industry experience.
+          <p className="mt-8 text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
+            Monroe Residential Partners is a Chicago-based, vertically integrated multifamily real estate development firm with
+            projects and investments across the United States&mdash;bringing Midwest discipline and market expertise to
+            communities nationwide.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
@@ -56,16 +60,28 @@ export default function Home() {
       </section>
 
       {/* Introduction */}
-      <section className="py-24 bg-monroe-cream">
+      <section className="section-y bg-monroe-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="font-display text-3xl md:text-4xl font-medium text-monroe-dark mb-6">
-                Building Communities That Inspire
+                A Midwest-Based Developer
+                <br />
+                With a National Footprint
               </h2>
-              <p className="text-monroe-gray-500 text-lg leading-relaxed">
-                Monroe Residential Partners is a vertically integrated real estate development firm recognized as an industry leader. With a half-century of combined experience, we specialize in inspirational design and uncompromised quality across ground-up and adaptive reuse multifamily and mixed-use projects.
-              </p>
+              <div className="text-monroe-gray-500 text-lg leading-relaxed space-y-4">
+                <p>
+                  Founded and headquartered in Chicago, Monroe Residential Partners is a multifamily residential real estate
+                  development firm driven by disciplined investment strategy, thoughtful design, and long-term value creation.
+                  While our roots are firmly planted in the Midwest, our experience and active development pipeline extend
+                  across multiple U.S. markets, including the Mountain West and other high-growth regions.
+                </p>
+                <p>
+                  We approach every project with a deep understanding of local market dynamics, combining Chicago-born real
+                  estate fundamentals with a national perspective on housing demand, design trends, and operational
+                  performance.
+                </p>
+              </div>
             </div>
           </AnimatedSection>
 
@@ -88,7 +104,7 @@ export default function Home() {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-24">
+      <section className="section-y">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
             <div className="flex items-end justify-between mb-12">
@@ -135,14 +151,16 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-monroe-dark">
+      <section className="section-y bg-monroe-dark">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2 className="font-display text-3xl md:text-4xl font-medium text-white mb-4">
-              Have a project in mind?
+              Building the Next Generation of Multifamily Communities
             </h2>
-            <p className="text-white/60 text-lg mb-8 max-w-xl mx-auto">
-              We live to talk about the next great project. Let's build something extraordinary together.
+            <p className="text-white/60 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+              From Chicago to the Mountain West and beyond, Monroe Residential Partners is committed to creating well-designed,
+              thoughtfully executed residential communities. Connect with us to explore development and investment
+              opportunities.
             </p>
             <a
               href="tel:+13122964855"

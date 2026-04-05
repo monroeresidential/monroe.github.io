@@ -25,7 +25,7 @@ export default function Portfolio() {
         subtitle="Ground-up and adaptive reuse multifamily and mixed-use developments across the United States."
       />
 
-      <section className="py-24">
+      <section className="section-y">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
             <div className="mb-12">

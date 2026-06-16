@@ -219,7 +219,7 @@ export default function ProjectDetail() {
                     )}
                   </dl>
                   {project.historicDesignation && (
-                    <div className="mt-6 pt-6 border-t border-monroe-gray-100">
+                    <div className="mt-6">
                       <div className="flex items-start gap-3">
                         <svg className="w-5 h-5 text-monroe-accent-dark flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21" />
@@ -229,7 +229,7 @@ export default function ProjectDetail() {
                     </div>
                   )}
                   {project.award && (
-                    <div className="mt-8 pt-6 border-t border-monroe-gray-100">
+                    <div className={`mt-8 pt-6${project.historicDesignation ? ' border-t border-monroe-gray-100' : ''}`}>
                       <div className="flex items-start gap-3">
                         <svg className="w-6 h-6 text-monroe-accent-dark flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-4.5A3.375 3.375 0 0012.75 9.75H12m4.5 9V9.75m0 0a3.375 3.375 0 00-3.375-3.375H12m0 0V3m0 3.375A3.375 3.375 0 008.625 9.75H12m0-3.375V3" />

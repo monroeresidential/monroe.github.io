@@ -8,8 +8,10 @@ interface PageHeroProps {
 export default function PageHero({ title, subtitle, backgroundImage, fullHeight = false }: PageHeroProps) {
   return (
     <section
-      className={`relative flex items-center justify-center ${
-        fullHeight ? 'min-h-screen' : 'min-h-[50vh]'
+      className={`relative ${
+        fullHeight
+          ? 'flex min-h-screen items-center justify-center'
+          : 'mt-20'
       }`}
     >
       {/* Background */}
@@ -25,7 +27,11 @@ export default function PageHero({ title, subtitle, backgroundImage, fullHeight 
       )}
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 pt-24 md:pt-0 max-w-4xl mx-auto">
+      <div
+        className={`relative z-10 text-center px-6 max-w-4xl mx-auto ${
+          fullHeight ? 'py-0' : 'section-y'
+        }`}
+      >
         <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-tight">
           {title}
         </h1>

@@ -28,7 +28,7 @@ export default function About() {
       />
 
       {/* Overview */}
-      <section className="py-24">
+      <section className="section-y">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
@@ -70,7 +70,7 @@ export default function About() {
       </section>
 
       {/* Capabilities */}
-      <section className="py-24 bg-monroe-cream">
+      <section className="section-y bg-monroe-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -94,7 +94,7 @@ export default function About() {
       </section>
 
       {/* Acquisition Criteria */}
-      <section className="py-24">
+      <section className="section-y">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <AnimatedSection>

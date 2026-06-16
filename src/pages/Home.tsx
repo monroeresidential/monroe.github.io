@@ -56,7 +56,7 @@ export default function Home() {
       </section>
 
       {/* Introduction */}
-      <section className="py-24 bg-monroe-cream">
+      <section className="section-y bg-monroe-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
             <div className="max-w-3xl mx-auto text-center">
@@ -88,7 +88,7 @@ export default function Home() {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-24">
+      <section className="section-y">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
             <div className="flex items-end justify-between mb-12">
@@ -135,7 +135,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-monroe-dark">
+      <section className="section-y bg-monroe-dark">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2 className="font-display text-3xl md:text-4xl font-medium text-white mb-4">

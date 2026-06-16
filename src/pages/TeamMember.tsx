@@ -21,7 +21,7 @@ export default function TeamMember() {
   return (
     <>
       {/* Header */}
-      <section className="bg-monroe-dark pt-32 pb-24">
+      <section className="bg-monroe-dark mt-20 section-y">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <Link
             to="/team"
@@ -73,7 +73,7 @@ export default function TeamMember() {
 
       {/* Details */}
       {(member.education || member.affiliations || member.linkedin) && (
-        <section className="py-24">
+        <section className="section-y">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
               {member.education && (

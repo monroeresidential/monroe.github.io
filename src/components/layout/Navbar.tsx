@@ -29,6 +29,7 @@ export default function Navbar() {
     { to: '/about', label: 'About' },
     { to: '/team', label: 'Team' },
     { to: '/portfolio', label: 'Portfolio' },
+    { to: '/contact', label: 'Contact' },
   ];
 
   const showSolid = isScrolled || !isHome || isMobileMenuOpen;

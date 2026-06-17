@@ -1,0 +1,3 @@
+# Copy to .dev.vars for local Worker dev (never commit .dev.vars)
+# Use your Mailgun *Private API key* (Dashboard → API Keys), not the SMTP password.
+MAILGUN_API_KEY=key-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

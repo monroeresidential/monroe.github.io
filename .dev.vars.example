@@ -1,0 +1,4 @@
+# Copy to .dev.vars for local `wrangler dev` / `npm run preview`.
+# In production these are set via `wrangler secret put RESEND_API_KEY`
+# and the CONTACT_FROM / CONTACT_TO vars in wrangler.jsonc.
+RESEND_API_KEY=re_your_api_key_here

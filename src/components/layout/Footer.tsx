@@ -30,6 +30,7 @@ export default function Footer() {
                 { to: '/about', label: 'About' },
                 { to: '/team', label: 'Team' },
                 { to: '/portfolio', label: 'Portfolio' },
+                { to: '/contact', label: 'Contact' },
               ].map((link) => (
                 <Link
                   key={link.to}

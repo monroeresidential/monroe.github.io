@@ -5,6 +5,8 @@ import ServiceCard from '../components/ui/ServiceCard';
 import { services } from '../data/services';
 
 const targetMarkets = [
+  { name: 'Chicago, IL', resort: 'Adaptive reuse & infill' },
+  { name: 'Grand Rapids, MI', resort: 'Adaptive reuse & infill' },
   { name: 'Victor-Driggs, ID', resort: 'Jackson Hole' },
   { name: 'Hailey-Ketchum, ID', resort: 'Sun Valley' },
   { name: 'Colorado Springs-Carbondale, CO', resort: 'Aspen-Snowmass' },
@@ -106,31 +108,59 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-monroe-gray-500 leading-relaxed">
                 <p>
-                  We specialize in multifamily assets in supply-constrained markets across the mountain west, with a primary focus on workforce housing in bedroom communities near major resorts.
+                  We pursue two complementary strategies: workforce housing in supply-constrained mountain-west markets near major resorts, and multifamily acquisitions in Chicago&mdash;including the adaptive reuse of turn-of-the-century office buildings for residential conversion and ground-up infill development.
                 </p>
               </div>
-              <ul className="mt-6 space-y-3 text-sm text-monroe-gray-500">
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-monroe-accent mt-1.5 flex-shrink-0" />
-                  1&ndash;10+ acres
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-monroe-accent mt-1.5 flex-shrink-0" />
-                  Property value up to $5,000,000 (excluding dev. costs)
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-monroe-accent mt-1.5 flex-shrink-0" />
-                  Zoned or viable path to entitlements for 100+ units (40+ minimum)
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-monroe-accent mt-1.5 flex-shrink-0" />
-                  Water rights required
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-monroe-accent mt-1.5 flex-shrink-0" />
-                  Within 45-minute commute to major resort
-                </li>
-              </ul>
+
+              <div className="mt-8">
+                <h3 className="text-sm font-semibold tracking-[0.15em] uppercase text-monroe-accent-dark mb-4 flex items-center gap-3">
+                  <span className="w-8 h-px bg-monroe-accent-dark flex-shrink-0" />
+                  Mountain West &middot; Workforce Housing
+                </h3>
+                <ul className="space-y-3 text-sm text-monroe-gray-500">
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-monroe-accent mt-1.5 flex-shrink-0" />
+                    1&ndash;10+ acres
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-monroe-accent mt-1.5 flex-shrink-0" />
+                    Property value up to $5,000,000 (excluding dev. costs)
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-monroe-accent mt-1.5 flex-shrink-0" />
+                    Zoned or viable path to entitlements for 100+ units (40+ minimum)
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-monroe-accent mt-1.5 flex-shrink-0" />
+                    Water rights required
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-monroe-accent mt-1.5 flex-shrink-0" />
+                    Within 45-minute commute to major resort
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-8">
+                <h3 className="text-sm font-semibold tracking-[0.15em] uppercase text-monroe-accent-dark mb-4 flex items-center gap-3">
+                  <span className="w-8 h-px bg-monroe-accent-dark flex-shrink-0" />
+                  Chicago &middot; Adaptive Reuse &amp; Infill
+                </h3>
+                <ul className="space-y-3 text-sm text-monroe-gray-500">
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-monroe-accent mt-1.5 flex-shrink-0" />
+                    Adaptive reuse of turn-of-the-century office buildings for residential conversion
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-monroe-accent mt-1.5 flex-shrink-0" />
+                    Ground-up infill development sites
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-monroe-accent mt-1.5 flex-shrink-0" />
+                    Downtown core and established neighborhood locations
+                  </li>
+                </ul>
+              </div>
             </AnimatedSection>
 
             <AnimatedSection delay={200}>

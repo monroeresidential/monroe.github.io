@@ -36,4 +36,10 @@ export const services: Service[] = [
     description: 'Strategic investment opportunities in high-quality multifamily and mixed-use developments.',
     icon: 'chart',
   },
+  {
+    id: 'asset-management',
+    title: 'Asset Management',
+    description: 'Hands-on portfolio and operations oversight that protects and grows long-term value across our communities.',
+    icon: 'chart-pie',
+  },
 ];

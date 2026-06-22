@@ -18,6 +18,36 @@ export default function ProjectDetail() {
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const galleryLength = project?.gallery?.length ?? 0;
 
+  // Horizontal gallery carousel
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  const updateScrollButtons = useCallback(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 8);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 8);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    updateScrollButtons();
+    el.addEventListener('scroll', updateScrollButtons, { passive: true });
+    window.addEventListener('resize', updateScrollButtons);
+    return () => {
+      el.removeEventListener('scroll', updateScrollButtons);
+      window.removeEventListener('resize', updateScrollButtons);
+    };
+  }, [updateScrollButtons, galleryLength]);
+
+  const scrollByPage = useCallback((dir: number) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    el.scrollBy({ left: dir * el.clientWidth, behavior: 'smooth' });
+  }, []);
+
   useEffect(() => {
     if (project) {
       document.title = `${project.name} | Monroe Residential Partners`;
@@ -250,17 +280,49 @@ export default function ProjectDetail() {
         <section className="section-y bg-monroe-cream">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <AnimatedSection>
-              <h2 className="font-display text-3xl md:text-4xl font-medium text-monroe-dark mb-12">
-                Gallery
-              </h2>
+              <div className="flex items-end justify-between gap-4 mb-12">
+                <h2 className="font-display text-3xl md:text-4xl font-medium text-monroe-dark">
+                  Gallery
+                </h2>
+                {project.gallery.length > 3 && (
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => scrollByPage(-1)}
+                      disabled={!canScrollLeft}
+                      aria-label="Previous images"
+                      className="w-11 h-11 flex items-center justify-center rounded-full border border-monroe-gray-300 text-monroe-dark transition-colors hover:bg-monroe-dark hover:text-white hover:border-monroe-dark disabled:opacity-30 disabled:pointer-events-none"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => scrollByPage(1)}
+                      disabled={!canScrollRight}
+                      aria-label="Next images"
+                      className="w-11 h-11 flex items-center justify-center rounded-full border border-monroe-gray-300 text-monroe-dark transition-colors hover:bg-monroe-dark hover:text-white hover:border-monroe-dark disabled:opacity-30 disabled:pointer-events-none"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
+                )}
+              </div>
             </AnimatedSection>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {project.gallery.map((img, i) => (
-                <AnimatedSection key={i} delay={i * 80}>
+            <AnimatedSection delay={100}>
+              <div
+                ref={scrollerRef}
+                className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              >
+                {project.gallery.map((img, i) => (
                   <button
+                    key={i}
                     onClick={(e) => openLightbox(i, e.currentTarget)}
-                    className="w-full group relative overflow-hidden aspect-[4/3] cursor-zoom-in"
+                    className="group relative shrink-0 basis-full sm:basis-[calc(50%-0.5rem)] lg:basis-[calc(33.333%-0.667rem)] snap-start overflow-hidden aspect-[4/3] cursor-zoom-in"
                   >
                     <img
                       src={img}
@@ -277,9 +339,9 @@ export default function ProjectDetail() {
                       </svg>
                     </div>
                   </button>
-                </AnimatedSection>
-              ))}
-            </div>
+                ))}
+              </div>
+            </AnimatedSection>
           </div>
         </section>
       )}
